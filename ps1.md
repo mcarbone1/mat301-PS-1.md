@@ -119,24 +119,43 @@ FROM database.table;
 ===
 
 1. What does SQL stand for?  How is it pronounced?
+Structured Query Language- “Es Que El”.
 2. Are SQL commands case-sensitive?  How can you determine? 
+No they are not, you could run them with lower and uppercase letters and check for function.
 3. What does DQL stand for?
+Data Query Language
 4. True or False:  Is it necessary to use the `FROM` clause with the select statement? 
+True
 5. True or False:  Is it necessary to use a `WHERE` clause?  If not, when and why would you use a `WHERE` clause?
+No, unless you want to specify where the the data is coming from.
 6. What is the purpose of the `ORDER BY` clause?  What is its default value?  
+The purpose of the ORDER by clause to order records by ascending and descending, the default is descending.
 7. Is the data in the products table case sensitive?  Should it be case sensitive/insensitive? 
+Yes is it. This is to ensure that data that varies with similar names. 
 8. Select all product names.
+SELECT name FROM unemath_Carbone.Products;
 9. List the MSRP for all products in ascending order.
+SELECT * FROM unemath_Carbone.Products order by msrp
 10. Find all products within  category 430.  What is category 430?
+SELECT * FROM unemath_Carbone.Products WHERE category_id=430; =Wine Glass
 11. Find all product id and names in category 430 manufactured by 428.
+SELECT * FROM unemath_Carbone.Products WHERE category_id=43 and manufacturer_id=428
 12. How many products in category 430 manufactured by 428?
+SELECT count(product_id) FROM unemath_Carbone.Products WHERE category_id=43 and manufacturer_id=428
 13. How many countries make products contained in the store?
+SELECT count(distinct(country)) FROM unemath_Carbone.Products
 14. How many products are manufactured in the USA?
+SELECT count(*) FROM unemath_Carbone.Products WHERE country='USA'
 15. How many products cost the company less than $10?
+SELECT count(*) FROM unemath.Carbone.Products WHERE price<10
 16. How many products cost the company less than $10 and sell for more than $20?
+SELECT count(*) FROM unemath.Carbone.Products WHERE price<10 and msrp>20
 17. How many products cost the company less than $10 and sell for less than $20?
+SELECT count(*) FROM unemath.Carbone.Products WHERE price<10 and msrp<20
 18. Which products cost less than $10 and sell for more than $20?
+SELECT name FROM unemath.Carbone.Products WHERE price<10 and msrp>20
 19. Count all product's that have shipping weight less than 1 pound or greater than 20 pounds.
+SELECT count(*) FROM unemath.Carbone.Products WHERE ship_weight<1 and ship_weight>20
 20. Create your own query.
-
+SELECT count(*) FROM unemath.Carbone.Products WHERE price<1000 and msrp>2000
 
